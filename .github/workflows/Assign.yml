@@ -1,31 +1,25 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Assignment
 
-# Controls when the workflow will run
-
 on: push
-  # Triggers the workflow on push or pull request events but only for the "main" branch
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-     Ubuntu:
-       runs-on: Ubuntu-latest
-       steps:
-       -run: date
-     Windows:
-        runs-on: windows-latest
-       steps:
-      -run: date
-     macos:
-        runs-on: macos-latest
-       steps:
-       -run: date
-     depends:
-     Needs: [Ubuntu, Windows, macos]
-       runs-on: macos-latest
-       steps:
-       -run: date
-     
-     
+  Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
+
+  Windows:
+    runs-on: windows-latest
+    steps:
+      - run: date
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - run: date
+
+  depends:
+    needs: [Ubuntu, Windows, macos]
+    runs-on: macos-latest
+    steps:
+      - run: date
